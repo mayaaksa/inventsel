@@ -1,5 +1,4 @@
 <x-app-layout>
-    {{-- Perkecil spasi antar section dari 7 ke 5 --}}
     <div class="space-y-5">
         
         <x-dashboard.hero
@@ -14,8 +13,6 @@
             :barangTersedia="$barangTersedia" 
             :peminjamanHariIni="$peminjamanHariIni" 
         />
-
-        {{-- Perkecil gap grid dari 6 ke 4 --}}
         <div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
             <div class="lg:col-span-2 flex flex-col gap-4">
                 <x-dashboard.chart />
