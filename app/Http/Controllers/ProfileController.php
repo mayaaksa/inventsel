@@ -21,15 +21,13 @@ class ProfileController extends Controller
 
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        // 1. Logika Bawaan Laravel (Update Nama/Email)
+
         $request->user()->fill($request->validated());
 
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
         }
 
-        // 2. Logika Tambahan (Update Foto)
-        // Kita tangani foto di sini sebelum $request->user()->save()
         if ($request->hasFile('photo')) {
             $user = $request->user();
             // Hapus foto lama jika ada
