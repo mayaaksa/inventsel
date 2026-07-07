@@ -7,7 +7,6 @@
 
 </button>
 
-    {{-- Left: Judul Dinamis --}}
     <div>
         <h1 class="text-[34px] font-bold text-[#8E001B]">
             @if(request()->routeIs('dashboard')) Dashboard
@@ -21,7 +20,6 @@
         </h1>
     </div>
 
-    {{-- Right --}}
     <div class="flex items-center gap-4">
         {{-- Search Form --}}
         <form action="{{ url()->current() }}" method="GET" class="relative group">
@@ -34,7 +32,6 @@
                 placeholder="Cari..."
                 class="w-[340px] rounded-full border border-white/60 bg-white/70 backdrop-blur-xl py-3 pl-14 pr-12 text-sm shadow-lg outline-none transition focus:border-red-300 focus:ring-4 focus:ring-red-100">
 
-            {{-- Tombol Hapus (X) - Hanya muncul jika ada teks --}}
             @if(request()->filled('search'))
             <a href="{{ url()->current() }}" 
                class="absolute right-4 top-1/2 -translate-y-1/2 flex h-6 w-6 items-center justify-center rounded-full bg-slate-200 text-slate-600 hover:bg-red-500 hover:text-white transition">
@@ -43,7 +40,6 @@
             @endif
         </form>
 
-        {{-- Notification --}}
 <a href="{{ route('notifications.index') }}" 
    class="group relative flex h-12 w-12 items-center justify-center rounded-full border border-white/60 bg-white/70 backdrop-blur-xl shadow-lg transition-all hover:scale-105 hover:bg-white active:scale-95">
     
@@ -54,7 +50,6 @@
     @endif
 </a>
 
-        {{-- Profile --}}
         <div class="flex items-center gap-3 rounded-full border border-white/60 bg-white/70 py-2 pl-2 pr-5 backdrop-blur-xl shadow-lg">
 <img
     src="https://api.dicebear.com/9.x/adventurer/svg?seed={{ urlencode(Auth::user()->name) }}"
@@ -73,7 +68,6 @@
             </div>
         </div>
 
-        {{-- Logout --}}
         <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button class="flex h-12 w-12 items-center justify-center rounded-full border border-red-100 bg-white/70 backdrop-blur-xl shadow-lg transition hover:bg-red-500 hover:text-white">
