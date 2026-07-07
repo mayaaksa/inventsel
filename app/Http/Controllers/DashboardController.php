@@ -30,7 +30,6 @@ class DashboardController extends Controller
 $chartLabels = [];
     $chartData = [];
 
-    // Gunakan Carbon untuk mendapatkan bulan saat ini
     $now = \Carbon\Carbon::now();
 
     for ($i = 5; $i >= 0; $i--) {
