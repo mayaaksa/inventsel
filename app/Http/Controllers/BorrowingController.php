@@ -84,14 +84,13 @@ class BorrowingController extends Controller
 
 $borrowing = Borrowing::create($data);
 
-// Tambahkan baris ini agar relasinya terbentuk:
 if ($request->has('product_id')) {
     $borrowing->details()->create(['product_id' => $request->product_id]);
 }
 
             return redirect()->route('borrowings.index')->with('success', 'Peminjaman berhasil ditambahkan.');
         } catch (ValidationException $e) {
-    // Hapus redirect, ganti dengan ini untuk melihat error aslinya:
+
     dd($e->errors()); 
             return back()->withInput()->with('error', 'Data peminjaman tidak valid.');
         }
