@@ -1,58 +1,77 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+InvenTsel - Telkomsel Inventory Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+InvenTsel adalah sistem informasi inventaris berbasis web yang dikembangkan menggunakan Laravel. Sistem ini digunakan untuk mengelola data barang, kategori, peminjaman, pengembalian, serta pembuatan laporan inventaris secara efisien.
 
-## About Laravel
+## Teknologi yang Digunakan
+- Laravel 12
+- PHP 8.2+
+- MySQL
+- Tailwind CSS
+- Alpine.js
+- Chart.js
+- Laravel Breeze
+- Vite
+- API DiceBear (Avatar Default)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Cara Instalasi
+1. Clone repository ini:
+   `git clone https://github.com/mayaaksa/inventsel.git`
+2. Masuk ke folder proyek:
+   `cd inventsel`
+3. Copy file environment:
+   `cp .env.example .env`
+4. Install dependencies:
+   `composer install`
+   `npm install`
+5. Generate key:
+   `php artisan key:generate`
+6. Konfigurasi database di file `.env`, lalu jalankan migrasi:
+   `php artisan migrate`
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Cara Menjalankan Project
+1. Jalankan server lokal:
+   `php artisan serve`
+2. Jalankan watcher untuk Tailwind:
+   `npm run dev`
+3. Buka browser di: `http://localhost:8000`
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Akun Login Testing
+- Role: Admin
+Email: admin@telkomsel.com
+Password: password
 
-## Learning Laravel
+- Role: Manager
+Email: manager@telkomsel.com
+Password: password
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Role: Staff
+Email: budi@telkomsel.com, siti@telkomsel.com, andi@telkomsel.com
+Password: password
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Fitur
+- Login/Register
+- Dashboard
+- Manajemen Barang
+- Manajemen Kategori
+- Manajemen Peminjaman
+- Riwayat Peminjaman
+- Laporan Inventaris
+- Pencarian Data
+- Grafik Statistik
+- Upload Gambar Bukti Peminjaman
+- Export PDF Laporan Peminjaman dan Barang
+- Export Excel Laporan Peminjaman dan Barang
+- Notifikasi Stok Menipis
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
 
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
-```
-
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Struktur Folder
+- app/
+- bootstrap/
+- config/
+- database/
+- node_modules/
+- public/
+- resources/
+- routes/
+- storage/
+- tests/
