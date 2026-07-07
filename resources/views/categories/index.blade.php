@@ -1,5 +1,4 @@
 <x-app-layout>
-    <!-- NOTIFIKASI DINAMIS (Hijau untuk sukses, Merah untuk error) -->
     @if(session('success') || session('error'))
         <div class="p-6 rounded-[32px] mb-8 shadow-sm border backdrop-blur-md text-white font-bold text-center {{ session('success') ? 'bg-green-500/90 border-green-400' : 'bg-red-500/90 border-red-400' }}">
             {{ session('success') ?? session('error') }}
@@ -16,7 +15,6 @@
         }
     }">
 
-        <!-- HEADER -->
         <div class="flex items-stretch gap-6 h-[140px]">
             <div class="flex-1 bg-gradient-to-r from-[#8E001B] to-[#551224] p-10 rounded-[32px] shadow-xl text-white flex flex-col justify-center">
                 <h2 class="text-3xl font-black tracking-tight">Katalog Kategori</h2>
@@ -28,7 +26,6 @@
             </div>
         </div>
 
-        <!-- ACTION BAR -->
         <div class="flex justify-between items-center">
             <button @click="createModal = true" class="flex items-center gap-2 px-6 py-3 bg-[#8E001B] text-white rounded-2xl shadow-sm hover:bg-[#6e0015] font-bold text-sm transition-all">
                 <i data-lucide="plus" class="w-4 h-4"></i> Tambah Kategori
@@ -44,7 +41,6 @@
             </div>
         </div>
 
-        <!-- GRID -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             @foreach($categories as $category)
             <div class="bg-white/70 backdrop-blur-md p-5 rounded-[24px] border border-white/50 shadow-sm hover:shadow-md transition-all">
@@ -68,7 +64,6 @@
 
         {{ $categories->links() }}
 
-        <!-- MODAL TAMBAH -->
         <div x-show="createModal" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
             <form action="{{ route('categories.store') }}" method="POST" x-show="createModal" x-transition class="bg-white/90 p-8 rounded-[32px] w-96 shadow-2xl border border-white/50">
                 @csrf
@@ -81,7 +76,6 @@
             </form>
         </div>
 
-        <!-- MODAL EDIT (Nama Lama & Nama Baru) -->
         <div x-show="editModal" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
             <form id="editForm" method="POST" x-show="editModal" x-transition class="bg-white/90 p-8 rounded-[32px] w-96 shadow-2xl border border-white/50">
                 @csrf @method('PUT')
@@ -97,7 +91,6 @@
             </form>
         </div>
 
-        <!-- MODAL HAPUS -->
         <div x-show="deleteModal" x-cloak class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
             <div x-show="deleteModal" x-transition class="bg-white/90 p-8 rounded-[32px] w-96 shadow-2xl border border-white/50 text-center">
                 <h3 class="text-xl font-bold mb-4">Konfirmasi Hapus</h3>
