@@ -32,7 +32,6 @@ class ReportController extends Controller {
         return view('reports.index', compact('totalBarang', 'dikembalikan', 'dipinjam', 'terlambat', 'chartData', 'popularItems', 'catLabels', 'catValues', 'categories'));
     }
 
-// --- Untuk Export PDF ---
 public function exportPdfBorrowing() {
     $borrowings = Borrowing::with(['details.product'])->get();
     $pdf = Pdf::loadView('reports.pdf-peminjaman', compact('borrowings'));
@@ -45,7 +44,6 @@ public function exportPdfProducts() {
     return $pdf->download('data-barang.pdf');
 }
 
-// --- Untuk Export Excel ---
 public function exportExcelBorrowing() {
     return Excel::download(new BorrowingExport, 'laporan-peminjaman.xlsx');
 }
